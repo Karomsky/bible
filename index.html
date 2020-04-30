@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch JSON from API Biblia.com</title>
+</head>
+
+<body>
+    <h1>Where is the verse?</h1>
+    <!--  <p>latitude:<span id="lat"></span> </p>
+    <p>longtitude:<span id="lon"></span></p> -->
+
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+
+        xhr.addEventListener("readystatechange", function() {
+            if (this.readyState === this.DONE) {
+                console.log(this.responseText);
+                const resp = this.responseText;
+
+            }
+        });
+
+        xhr.open("GET", "https://api.scripture.api.bible/v1/bibles");
+        xhr.setRequestHeader(`api-key`, `8e9c91fd13587b3df152349277c5b1b0`);
+
+        xhr.send(data);
+        console.log(data);
+    </script>
+</body>
+
+</html>
+
+</html>
